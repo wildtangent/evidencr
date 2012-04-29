@@ -1,0 +1,18 @@
+= form_for(@pupil, {:html => {:class => "well form-inline"}}) do |f|
+  %fieldset 
+    %legend
+      - if @pupil.new_record?
+        = t("pupils.new.legend")
+      - else
+        = t("pupils.edit.legend")
+        
+    = render "error_messages", :item => @pupil
+      
+    = f.text_field(:first_name, :class => "input-small", :placeholder => t("pupils.new.first_name"))
+    = f.text_field(:last_name, :class => "input-small", :placeholder => t("pupils.new.last_name"))
+    
+    - if @pupil.new_record?
+      = submit_tag(t("pupils.new.submit"), :class => "btn btn-primary")
+    - else
+      = submit_tag(t("pupils.edit.submit"), :class => "btn btn-primary")
+    

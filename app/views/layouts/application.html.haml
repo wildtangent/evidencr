@@ -1,0 +1,41 @@
+!!! XML
+!!!5
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %title= t("application.site_name")
+    = stylesheet_link_tag("application", :media => "all", :debug => true)
+    :css
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          = link_to("", :class => "btn btn-navbar", :"data-toggle" => "collapse", :"data-target" => ".nav-collapse") do
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to(t("application.site_name"), root_path, :class => "brand")
+          .nav-collapse
+            %ul.nav
+              %li
+                = link_to(t("application.nav.pupils"), pupils_path)
+              %li
+                = link_to(t("application.nav.posts"), posts_path)
+              %li
+                = link_to(t("application.nav.categories"), categories_path)
+
+    .container
+      
+      = yield
+    
+      %footer
+        
+      
+  = javascript_include_tag "application"  
+  
+  = yield :javascripts

@@ -2,4 +2,64 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  application:
+    site_name: Evidencr
+    nav: 
+      pupils: Pupils
+      posts: Observations
+      categories: Objectives
+      
+  categories:
+    index:
+      title: Learning Objectives
+      new: Add learning objective
+      edit: Edit
+      destroy: Delete
+      
+    new:
+      legend: Add a new learning objective
+      name_placeholder: Name
+      short_name_placeholder: Short name
+  pupils:
+    index:
+      title: Pupils
+      new: Add pupil
+      edit: Edit
+      destroy: Remove
+      confirm_destroy: Are you sure you want to remove this pupil?
+    show:
+      edit: Edit pupil
+      new_post: Add observation
+      with: "with:"
+      solo: on their own
+      posts:
+        title: Observations
+        edit: Edit
+        
+    new:
+      first_name: First name
+      last_name: Last name
+      submit: Create pupil
+      legend: Create a new pupil
+    edit:
+      submit: Update pupil
+      legend: Edit pupil
+
+  posts:
+    index:
+      title: Observations
+      new: New observation
+      edit: Edit
+      destroy: Remove
+      confirm_destroy:  Are you sure you want to remove this post?
+      with: "Pupils:"
+      solo: "on their own"
+    new:
+      title: Record a new observation
+    form:
+      observation_placeholder: What did you observe?
+      observed_on_placeholder: "What was the date?"
+      pupils_placeholder: Start typing pupil names
+      uploads:
+        noscript: Please enable JavaScript to use file uploader.
+        

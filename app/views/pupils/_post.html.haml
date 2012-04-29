@@ -1,0 +1,28 @@
+.span4
+  .post_it_note
+    = simple_format(post.observation, :class => "larger")
+    %p
+      - if post.pupils.size > 1 
+        = t("pupils.show.with")
+        = other_pupils(post.pupils).to_sentence.html_safe
+      - else
+        = t("pupils.show.solo")
+        
+    %p
+      = post.categories.map(&:short_name).sort.to_sentence
+    
+    %p.date
+      = post.observed_on
+    
+    %p.edit
+      = link_to(t("pupils.show.posts.edit"), edit_post_path(post))
+    
+    %p.destroy
+      = link_to(t("posts.index.destroy"), post_path(post), :method => :delete, :confirm => t("posts.index.confirm_destroy"), :rel => "popover")
+      
+    .uploads_popover
+      =# link_to("pic", nil, :rel => "popover")
+      
+      - if post.uploads.any?
+        .photos    
+          = render post.uploads

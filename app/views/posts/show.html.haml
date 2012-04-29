@@ -1,0 +1,19 @@
+%h1 Observation
+
+%p
+  = @post.observation
+  
+%p
+  = @post.observed_on
+  
+%ul
+  - @post.pupils.each do |pupil|
+    %li= pupil.name
+    
+%ul
+  - @post.categories.each do |category|
+    %li= category.name
+    
+%ul
+  - @post.uploads.each do |upload|
+    %li= image_tag(upload.file.url, :class => "upload mini")    

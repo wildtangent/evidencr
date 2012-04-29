@@ -1,0 +1,9 @@
+.row.spacer
+  .span10
+    %h1= t("posts.index.title")
+  .span2
+    = link_to(t("posts.index.new"), new_post_path, :class => "btn btn-success")
+    
+
+.row
+  = render @posts

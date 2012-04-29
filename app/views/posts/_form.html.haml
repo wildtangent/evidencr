@@ -1,0 +1,53 @@
+- content_for :javascripts do
+  = javascript_include_tag("posts")
+  = javascript_include_tag("tag-it")
+  = javascript_include_tag("bootstrap-button")
+
+= form_for(@post, :html => {:class => "well"}) do |f|
+  %fieldset
+    %legend
+      = t("posts.new.title")
+    
+    = render "error_messages", :item => @post
+    
+    .controls
+      = f.text_area(:observation, :class => "input-xlarge span4", :rows => 10, :placeholder => t("posts.form.observation_placeholder"))
+      
+        
+    .controls
+      = f.text_field(:observed_on, :placeholder => t("posts.form.observed_on_placeholder"), :class => "datepicker")
+    
+    .controls
+      %ul.tagit{"data-source" => pupils_and_ids, "data-placeholder" => t("posts.form.pupils_placeholder")}
+        - @posted_pupils.each do |pupil|
+          %li{:class => "tagit-choice ui-widget-content ui-state-default ui-corner-all"}
+            %span.tagit-label
+              = pupil.name
+              = link_to("X", :class => "tagit-close")
+              
+      
+    .controls
+      %p Learning areas
+      .btn-group{"data-toggle" => "buttons-checkbox"}
+        = hidden_field_tag("post[category_ids][]", nil)
+        - @categories.each do |category|
+          %span
+            = check_box_tag("post[category_ids][]", category.id, @post.category_ids.include?(category.id), {:autocomplete => "off" })
+            = label_tag("post[category_ids][]", category.short_name, :class => "btn")
+              
+      #file-uploader
+    
+      .controls
+        - if @post.uploads.any?
+          %ul.qq-upload-list
+            - @post.uploads.each do |upload|
+              %li
+                = image_tag(upload.file.url, :class => "upload mini")
+                = f.hidden_field(:upload_ids, :value => upload.id, :multiple => true)    
+
+    %p
+      = f.submit(:class => "btn btn-default", :class => "btn btn-primary")
+      
+      
+      
+      

@@ -1,0 +1,11 @@
+= content_for :javascripts do
+  = javascript_include_tag("pupils")
+  
+.row.spacer
+  .span10
+    %h1= t("pupils.index.title")
+  .span2
+    = link_to(t("pupils.index.new"), new_pupil_path, :class => "btn btn-success")
+
+
+= render @pupils

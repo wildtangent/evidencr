@@ -1,0 +1,16 @@
+%input{:type => "file", :name => "upload[files][]", "data-url" => uploads_path, :multiple => "multiple", :id => "fileupload"}
+- content_for :javascripts do 
+  = javascript_include_tag("jQuery-File-Upload/jquery.iframe-transport.js")
+  = javascript_include_tag("jQuery-File-Upload/jquery.fileupload.js")
+
+  :javascript
+    $(function () {
+      $('#fileupload').fileupload({
+        dataType: 'json',
+        done: function (e, data) {
+          $.each(data.result, function (index, file) {
+            $('<p/>').text(file.name).appendTo(document.body);
+          });
+        }
+      });
+    });

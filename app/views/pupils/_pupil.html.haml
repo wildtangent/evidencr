@@ -1,0 +1,10 @@
+.row
+  .span2
+    = link_to(image_tag(pupil.profile, :class => "profile"), pupil_path(pupil))
+  .span8
+    %h3
+      = pupil.first_name
+      = pupil.last_name
+  .span2
+    = link_to(t("pupils.index.edit"), edit_pupil_path(pupil), :class => "btn btn-primary")
+    = link_to(t("pupils.index.destroy"), pupil_path(pupil), :method => :delete, :confirm => t("pupils.index.confirm_destroy"), :class => "btn btn-danger")

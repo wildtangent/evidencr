@@ -1,0 +1,9 @@
+= form_for(@category, :html => {:class => "well"}) do |f|
+  %fieldset
+    %legend= t("categories.new.legend")
+  
+    = f.text_field(:name, :placeholder => t("categories.new.name_placeholder"))
+    
+    = f.text_field(:short_name, :placeholder => t("categories.new.short_name_placeholder"))
+    
+    = f.submit(:class => "btn btn-primary")

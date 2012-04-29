@@ -10,4 +10,79 @@
  *
  *= require_self
  *= require_tree .
+ *= require bootstrap
+ *= require responsive
+ *= require ui-darkness/jquery-ui-1.8.19.custom
+ *= require jquery.tag-it
+ *= require file-uploader/fileuploader
 */
+
+.row.spacer{
+  margin-bottom:15px;
+  padding-bottom:5px;
+  border-bottom:1px solid;
+}
+
+.field_with_errors{
+  display:inline;
+}
+
+ul.error_messages li {
+  color:#DA4F49;
+}
+
+
+img.profile, img.profile-large {
+  width:100px;
+  padding:5px;
+  border:1px solid;
+  margin-bottom:10px;
+}
+
+img.profile-large {
+  width:250px;
+}
+
+
+.post_it_note{
+  min-height:250px;
+  padding:10px 15px 5px 15px;
+  margin-bottom:30px;
+  background-color: #FFFFCC;
+  font-family: 'Lucida Casual', 'Comic Sans MS';
+  font-size: 1.3em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+  position:relative;
+}
+
+.post_it_note p{
+  font-family: 'Lucida Casual', 'Comic Sans MS';
+}
+
+.post_it_note p.larger{
+  font-size:1.2em;
+  line-height:1.2em;
+}
+
+.post_it_note p.date{
+  position:absolute;
+  left:10px;
+  bottom:5px;
+}
+
+.post_it_note p.edit, .post_it_note p.destroy{
+  font-size:0.7em;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align:right;
+  position:absolute;
+  right:70px;
+  bottom:2px;
+}
+
+.post_it_note p.destroy {
+  right:10px;
+}
+
+.post_it_note p.destroy a{
+  color: #DA4F49;
+}

@@ -1,0 +1,8 @@
+.row
+  .span2
+    = category.short_name
+  .span8
+    = category.name
+  .span2
+    = link_to(t("categories.index.edit"), edit_category_path(category), :class => "btn btn.primary")
+    = link_to(t("categories.index.destroy"), category_path(category), :method => :delete, :class => "btn btn-warning")

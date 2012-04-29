@@ -1,0 +1,9 @@
+.row.spacer
+  .span10
+    %h1= t('categories.index.title')
+  
+  .span2
+    = link_to(t("categories.index.new"), new_category_path, :class => "btn btn-success")
+    
+
+= render @categories

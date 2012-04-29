@@ -1,0 +1,16 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#post_observation{
+  background-color: #FFFFCC;
+  font-family: 'Lucida Casual', 'Comic Sans MS';
+  font-size: 1.3em;
+}
+
+.btn-group span > input {
+    display: none;
+}
+
+img.upload.mini{
+  width:100px;
+}
