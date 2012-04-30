@@ -44,10 +44,12 @@ gem 'capistrano'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :test do
-  gem 'rspec'
+group :development, :test do
   gem 'rspec-rails'
-  gem 'factory_girl'
   gem 'factory_girl_rails'
-  gem 'simplecov'
+  gem 'capybara'
+  gem 'simplecov', :require => false
+  gem 'simplecov-rcov', :require => false
+  gem 'watchr'
+  gem 'spork', '~> 0.9.0.rc'
 end
