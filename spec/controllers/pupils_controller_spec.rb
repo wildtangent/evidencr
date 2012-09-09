@@ -1,7 +1,4 @@
 require 'spec_helper'
 
-describe PupilsController do
-  
-  it 'should be awesome'
-  
+describe PupilsController do  
 end
